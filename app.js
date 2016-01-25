@@ -1,32 +1,55 @@
 var app = angular.module('myApp',[]).controller('myControl',function($scope){
 
                       $scope.incomeData = [
+                        {
+                        transactionId:1,
+                        payer: 'globant',
+                        payee : 'Sam',
+                        category: 'Salary',
+                        subCategory:'',
+                        amount:30000,
+                        date: '1st,jan 2016',
+                        modeOfPayment :'cash',
+                        notes:'',
+                        type : 'Income'
+                      },
                  {
-                     name: 'Sam',
-                     income: 30000,
-                     sources: 'Salary'
-
-                 },
-                 {
-                     name: 'John',
-                     income: 80000,
-                     sources: 'Business'
+                   transactionId:2,
+                   payer: 'globant',
+                   payee : 'John',
+                   category: 'Salary',
+                   subCategory:'',
+                   amount:30000,
+                   date:'1st,jan 2016',
+                   modeOfPayment :'cash',
+                   notes:'',
+                   type : 'Income'
                  }
-             ];            
+             ];
               $scope.expenseData = [
                  {
-                     name: 'Sam',
-                     hra: 14000,
-                     lta: 1020,
-                     medical: 1050,
-                     party:4000
+                   transactionId:1,
+                   payer: 'globant',
+                   payee : 'Sam',
+                   category: 'Salary',
+                   subCategory:'',
+                   amount:30000,
+                   date: '1st,jan 2016',
+                   modeOfPayment :'cash',
+                   notes:'',
+                   type : 'Expense'
                  },
                  {
-                     name: 'John',
-                     hra: 7000,
-                     lta: 7200,
-                     medical: 8500,
-                     party:5000
+                   transactionId:1,
+                   payer: 'globant',
+                   payee : 'Sam',
+                   category: 'Salary',
+                   subCategory:'',
+                   amount:30000,
+                   date: '1st,jan 2016',
+                   modeOfPayment :'cash',
+                   notes:'',
+                   type : 'expense'
                  }
              ];
 

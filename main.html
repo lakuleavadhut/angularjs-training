@@ -37,14 +37,24 @@
             <table class="table table-striped table-bordered">
               <thead>
                 <tr>
-                  <td>  Name   </td>
-                  <td>  Income </td>
-                  <td>  sources</td>
+                  <td> transactionId  </td>
+                  <td>  payer         </td>
+                  <td>  payee         </td>
+                  <td>  category      </td>
+                  <td>  Amount        </td>
+                  <td>  Date          </td>
+                  <td> modeOfPayment  </td>
+                  <td> Type           </td>
                 </tr>
                 <tr ng-repeat="incomeData in incomeData ">
-                <td>{{incomeData.name}}</td>
-                <td>{{incomeData.income}}</td>
-                <td>{{incomeData.sources}}</td>
+                <td>{{incomeData.transactionId}}</td>
+                <td>{{incomeData.payer}}</td>
+                <td>{{incomeData.payee}}</td>
+                <td>{{incomeData.category}}</td>
+                <td>{{incomeData.amount}}</td>
+                <td>{{incomeData.date}}</td>
+                <td>{{incomeData.modeOfPayment}}</td>
+                <td>{{incomeData.type}}</td>
                 </tr>
                 </thead>
             </table>
@@ -54,18 +64,24 @@
             <table class="table table-striped table-bordered">
                 <thead>
                   <tr>
-                    <td>  Name  </td>
-                    <td>  HRA   </td>
-                    <td>  LTA   </td>
-                    <td>  Medical </td>
-                    <td>  Party </td>
+                    <td> transactionId  </td>
+                    <td>  payer         </td>
+                    <td>  payee         </td>
+                    <td>  category      </td>
+                    <td>  Amount        </td>
+                    <td>  Date          </td>
+                    <td> modeOfPayment  </td>
+                    <td> Type           </td>
                   </tr>
               <tr ng-repeat="expenseData in expenseData">
-                <td>{{expenseData.name}}</td>
-                <td>{{expenseData.hra}}</td>
-                <td>{{expenseData.lta}}</td>
-                <td>{{expenseData.medical}}</td>
-                <td>{{expenseData.party}}</td>
+                <td>{{expenseData.transactionId}}</td>
+                <td>{{expenseData.payer}}</td>
+                <td>{{expenseData.payee}}</td>
+                <td>{{expenseData.category}}</td>
+                <td>{{expenseData.amount}}</td>
+                <td>{{expenseData.date}}</td>
+                <td>{{expenseData.modeOfPayment}}</td>
+                <td>{{expenseData.type}}</td>
               </tr>
             </thead>
           </table>
