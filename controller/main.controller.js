@@ -1,9 +1,17 @@
-app.controller('ExampleController', ['$scope','incomeFactory',function($scope,incomeFactory) {
+app.controller('mainController',['incomeFactory','$scope',function(incomeFactory,$scope) {
 
-  $scope.user=[];
 
-  $scope.add = function(user){
+    $scope.add = function(incomedata){
 
-              incomeFactory(user);
+        debugger;
+        if(incomedata.type == 'income'){
 
-      };
+              incomeFactory.addIncome(incomedata);
+
+              }else
+              {
+              incomeFactory.addExpenses(incomedata);
+            }
+            debugger;
+            };
+    }]);

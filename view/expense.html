@@ -1,0 +1,32 @@
+<div>
+  <h1>Expenses</h1>
+   <table class="table table-bordered">
+     <thead>
+       <tr>
+         <td>TransactionID</td>
+         <td>Payer</td>
+         <td>payee</td>
+         <td>Type</td>
+         <td>Category</td>
+         <td>date</td>
+         <td>amount</td>
+         <td>ModeofPayment</td>
+       </tr>
+       <tr ng-repeat="person in expenseData">
+         <td>{{person.transactionId}}</td>
+         <td>{{person.payer}}</td>
+         <td>{{person.payee}}</td>
+          <td>{{person.type}}</td>
+         <td>{{person.category}}</td>
+         <td>{{person.date}}</td>
+          <td>{{person.Amount}}</td>
+         <td>{{person.ModeofPayment}}</td>
+
+
+         <td><button type="button",value="btn1",ng-click="Modify()"/>modify</td>
+        <td><button type="button",value="btn2",ng-click="Delete()"/>Delete</td>
+       </tr>
+     </thead>
+   </table>
+
+</div>
