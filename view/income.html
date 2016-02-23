@@ -1,32 +1,73 @@
 <div>
   <h1>Income</h1>
-   <table class="table table-bordered">
-     <thead>
-       <tr>
-         <td>TransactionID</td>
-         <td>Payer</td>
-         <td>payee</td>
-         <td>Type</td>
-         <td>Category</td>
-         <td>date</td>
-         <td>amount</td>
-         <td>ModeofPayment</td>
-       </tr>
-       <tr ng-repeat="user in incomeData">
-         <td>{{user.transactionId}}</td>
-         <td>{{user.payer}}</td>
-         <td>{{user.payee}}</td>
-          <td>{{user.type}}</td>
-         <td>{{user.category}}</td>
-         <td>{{user.date}}</td>
-          <td>{{user.Amount}}</td>
-         <td>{{user.ModeofPayment}}</td>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>TransactionID</td>
+        <td>Payer</td>
+        <td>payee</td>
+        <td>Type</td>
+        <td>Category</td>
+        <td>date</td>
+        <td>amount</td>
+        <td>ModeofPayment</td>
+      </tr>
+      <tr ng-repeat="user in incomeData">
+        <td>{{user.transactionId}}</td>
+        <td>
+          <div ng-hide="editingData[user.transactionId]">{{user.payer}}</div>
+          <div ng-show="editingData[user.transactionId]">
+            <input type="text" ng-model="user.payer" />
+          </div>
+        </td>
+        <td>
+          <div ng-hide="editingData[user.transactionId]">{{user.payee}}</div>
+          <div ng-show="editingData[user.transactionId]">
+            <input type="text" ng-model="user.payee" />
+          </div>
+        </td>
+        <td>
+          <div ng-hide="editingData[user.transactionId]">{{user.type}}</div>
+          <div ng-show="editingData[user.transactionId]">
+            <input type="text" ng-model="user.type" />
+          </div>
+        </td>
+        <td>
+          <div ng-hide="editingData[user.transactionId]">{{user.category}}</div>
+          <div ng-show="editingData[user.transactionId]">
+            <input type="text" ng-model="user.category" />
+          </div>
+        </td>
+        <td>
+          <div ng-hide="editingData[user.transactionId]">{{user.date}}</div>
+          <div ng-show="editingData[user.transactionId]">
+            <input type="text" ng-model="user.date" />
+          </div>
+        </td>
 
+        <td>
+          <div ng-hide="editingData[user.transactionId]">{{user.Amount}}</div>
+          <div ng-show="editingData[user.transactionId]">
+            <input type="text" ng-model="user.Amount" />
+          </div>
+        </td>
 
-         <td><button type="button",value="btn1",ng-click="Modify()"/>modify</td>
-        <td><button type="button",value="btn2",ng-click="Delete()"/>Delete</td>
-       </tr>
-     </thead>
-   </table>
+        <td>
+          <div ng-hide="editingData[user.transactionId]">{{user.ModeofPayment}}</div>
+          <div ng-show="editingData[user.transactionId]">
+            <input type="text" ng-model="user.ModeofPayment" />
+          </div>
+        </td>
+
+        <td>
+          <button ng-hide="editingData[user.transactionId]" type="button" value="btn1" ng-click="modify(user)">modify</button>
+          <button ng-show="editingData[user.transactionId]" type="button" value="btn2" ng-click="update(user)">update</button>
+        </td>
+        <td>
+          <button type="button" value="btn2" ng-click="delete(user)">Delete</button>
+        </td>
+      </tr>
+    </thead>
+  </table>
 
 </div>

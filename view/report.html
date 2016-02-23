@@ -1,3 +1,51 @@
-<div ng-controller="reportController">
-  <h1>income</h1>
+<div>
+  <div class="page-header">
+    <h2>Reports</h2>
+  </div>
+
+
+  <input type="radio" ng-model="report.type" value="income" />Income
+  <input type="radio" ng-model="report.type" value="expenses" />Expenses
+
+  <br>
+  <br> Category:
+  <select style="max-width:200px;margin-top:10px;" class="form-control" ng-model="report.category">
+    <option ng-if="report.type=='income'" value="salary">salary</option>
+    <option ng-if="report.type=='income'" value="business">business</option>
+    <option ng-if="report.type=='expenses'" value="HomeIntrest">Home Intrest</option>
+    <option ng-if="report.type=='expenses'" value="shopping">shopping</option>
+  </select>
+  <div class="page-header">
+    <!-- <h3>{{total}}</h3> -->
+  </div>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>TransID</th>
+          <th>Payer</th>
+          <th>Payee</th>
+          <th>type</th>
+          <th>Category</th>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>mode of payment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="x in reportData  | filter:report.category">
+          <div>
+            <td>{{ x.transactionId }}</td>
+            <td>{{ x.payer }}</td>
+            <td>{{ x.payee }}</td>
+            <td>{{ x.type }}</td>
+            <td>{{ x.category }}</td>
+            <td>{{ x.date }}</td>
+            <td>{{ x.Amount }}</td>
+            <td>{{ x.ModeofPayment }}</td>
+          </div>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

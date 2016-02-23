@@ -1,17 +1,21 @@
-app.controller('mainController',['incomeFactory','$scope',function(incomeFactory,$scope) {
+app.controller('mainController', ['incomeFactory', '$scope', '$http', '$location', 'Notification',
+  function(incomeFactory, $scope, $http, $location, Notification) {
+    $scope.add = function(data) {
 
+      if (data.type == 'income') {
 
-    $scope.add = function(incomedata){
+        incomeFactory.addIncome(data);
+        Notification.success('income Added');
+        $location.path('/view/income');
 
-        debugger;
-        if(incomedata.type == 'income'){
+      } else {
 
-              incomeFactory.addIncome(incomedata);
+        incomeFactory.addExpenses(data);
+        Notification.success('expense Added');
+        $location.path('/view/expense');
+      }
+      $scope.data = "";
 
-              }else
-              {
-              incomeFactory.addExpenses(incomedata);
-            }
-            debugger;
-            };
-    }]);
+    };
+  }
+]);

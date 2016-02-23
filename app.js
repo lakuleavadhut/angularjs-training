@@ -1,24 +1,41 @@
-var app =angular.module('myApp', ['ngRoute']);
+var app = angular.module('myApp', ['ngRoute', 'ui-notification']);
 
-app.config(['$routeProvider',function($routeProvider){
+app.config(['$routeProvider', function($routeProvider) {
 
-    $routeProvider
+  $routeProvider
 
-    .when('/view/main',{
+    .when('/view/main', {
 
-          templateUrl:'view/main.html',
-          controller: 'mainController'
+      templateUrl: '/view/main.html',
+      controller: 'mainController'
     })
-    .when('/view/income',{
+    .when('/view/income', {
 
-        templateUrl:'view/income.html',
-        controller: 'incomeController'
+      templateUrl: '/view/income.html',
+      controller: 'incomeController',
+      resolve: {
+        income: function(incomeFactory) {
+          return incomeFactory.getIncomeFromHTTP();
+        }
+      }
     })
-    .when('/view/expense',{
+    .when('/view/expense', {
 
-        templateUrl:'view/expense.html',
-        controller: 'expenseController'
+      templateUrl: '/view/expense.html',
+      controller: 'expenseController'
+    })
+    .when('/view/report', {
+
+      templateUrl: '/view/report.html',
+      controller: 'reportController'
+    })
+    .when('/view/Home', {
+
+      templateUrl: '/view/Home.html',
+      controller: 'homeController'
     })
 
-    .otherwise({redirectTo: "/view/main"});
+  .otherwise({
+    redirectTo: "/view/main"
+  });
 }]);

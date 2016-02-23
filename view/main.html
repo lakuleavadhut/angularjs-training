@@ -1,74 +1,81 @@
-
 <div>
-  <form novalidate class="css-form">
-   <table class="table table-bordered">
-     <tr>
-       <td>
-    Transaction Id:
-  </td>
-    <td>
-      <input style="max-width:200px;" type="number" class="form-control" ng-model="incomedata.transactionId" required />
-  </td>
-</tr>
-<tr>
-  <td>
-    Name of the payer: </td>
-     <td>
-       <input style="max-width:200px;" class="form-control" ng-model="incomedata.payer" required />
-  </td>
-</tr>
-<tr>
-  <td>
-    Name of the payee:
-  </td>
-   <td>
-    <input style="max-width:200px;" class="form-control" ng-model="incomedata.payee" required />
-  </td>
-</tr>
-<tr>
-  <td>
-    Type:
-  </td>
+  <form novalidate name="addForm" class="css-form">
+    <h1> Add Information</h1>
+    <table class="table table-bordered">
+      <tr>
+        <td>
+          Transaction Id:
+        </td>
+        <td>
+          <input style="max-width:200px;" type="number" class="form-control" ng-model="data.transactionId" required />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Name of the payer: </td>
+        <td>
+          <input style="max-width:200px;" class="form-control" ng-model="data.payer" required />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Name of the payee:
+        </td>
+        <td>
+          <input style="max-width:200px;" class="form-control" ng-model="data.payee" required />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Type:
+        </td>
 
-          <td>  <input type="radio" ng-model="incomedata.type" value="income" />Income
-                <input type="radio" ng-model="incomedata.type" value="expenses" />Expenses</td>
+        <td>
+          <input type="radio" ng-model="data.type" value="income" />Income
+          <input type="radio" ng-model="data.type" value="expenses" />Expenses</td>
 
-        </tr>
-        <tr>
-          <td>
-    Category: </td>
-     <td><select style="max-width:200px;margin-top:10px;" class="form-control" ng-model="incomedata.category">
-  <option ng-if="incomedata.type=='income'" value="salary">salary</option>
-  <option ng-if="incomedata.type=='income'" value="business">business</option>
-  <option ng-if="incomedata.type=='expenses'" value="HomeIntrest">Home Intrest</option>
-  <option ng-if="incomedata.type=='expenses'" value="shopping">shopping</option>
-      </select>
-    </td>
-  </tr>
-    <tr>
-      <td>
-    Date: </td> <td><input style="max-width:200px;display: inline-flex;" class="form-control" ng-model="incomedata.date" required />
-</td>
-    </tr>
-  <tr>
-    <td>
-    Amount:  </td> <td>
-      <input style="max-width:200px;" class="form-control" ng-model="incomedata.Amount" required />
-  </td>
-</tr>
-<tr>
-  <td>
-    Payment Mode: </td><td> <select style="max-width:200px;margin-top:10px;" class="form-control" ng-model="incomedata.ModeofPayment">
-  <option value="cash">cash</option>
-  <option value="check">check</option>
-  <option value="card">Card </option>
-      </select>
-    </td>
-  </tr>
-  <tr>
-    <td>
-  <input type="submit" ng-click="add(incomedata)" value="submit" />
-</td>
-</tr>
-</table>
+      </tr>
+      <tr>
+        <td>
+          Category: </td>
+        <td>
+          <select style="max-width:200px;margin-top:10px;" class="form-control" ng-model="data.category">
+            <option ng-if="data.type=='income'" value="salary">salary</option>
+            <option ng-if="data.type=='income'" value="business">business</option>
+            <option ng-if="data.type=='expenses'" value="HomeIntrest">Home Intrest</option>
+            <option ng-if="data.type=='expenses'" value="shopping">shopping</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Date: </td>
+        <td>
+          <input style="max-width:200px;display: inline-flex;" class="form-control" ng-model="data.date" required />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Amount: </td>
+        <td>
+          <input style="max-width:200px;" class="form-control" ng-model="data.Amount" required />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Payment Mode: </td>
+        <td>
+          <select style="max-width:200px;margin-top:10px;" class="form-control" ng-model="data.ModeofPayment">
+            <option value="cash">cash</option>
+            <option value="check">check</option>
+            <option value="card">Card </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="submit" ng-click="add(data)" value="submit" />
+        </td>
+      </tr>
+    </table>
 </div>
