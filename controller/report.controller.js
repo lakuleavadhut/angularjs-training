@@ -1,9 +1,9 @@
-app.controller('reportController', ['$scope', 'incomeFactory', function($scope, incomeFactory) {
+app.controller('reportController', ['$scope', 'DataFactory', function($scope, DataFactory) {
 
-  var reportincdata2 = incomeFactory.getIncomeFromLocal();
-  var reportexpedata = incomeFactory.getExpense();
+  var reportincdata2 = DataFactory.getIncomeFromLocal();
+  var reportexpedata = DataFactory.getExpense();
   var reportincdata = [];
-  incomeFactory.getIncomeFromHTTP()
+  DataFactory.getIncomeFromHTTP()
     .then(function(result) {
       reportincdata = result.data;
       $scope.reportData = reportincdata.concat(reportincdata2, reportexpedata);

@@ -1,14 +1,8 @@
-app.controller('homeController', ['incomeFactory', '$scope', function(incomeFactory, $scope) {
+ app.controller('homeController', ['DataFactory', '$scope', function(DataFactory, $scope) {
 
-  var homeincome = incomeFactory.getIncomeFromLocal();
-  var homeexpense = incomeFactory.getExpense();
-  var homeincome2 = [];
-
-  incomeFactory.getIncomeFromHTTP()
-    .then(function(result) {
-      homeincome2 = result.data;
-      $scope.homeData = homeincome2.concat(homeincome);
-    });
-
+  $scope.totalExpenseAmount=0;
+  $scope.totalIncomeAmount=0;
+  $scope.totalBalanceAmount=0;
+  $scope.HomeIncomeData=0;
 
 }]);

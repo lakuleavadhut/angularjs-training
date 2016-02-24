@@ -42,6 +42,7 @@
           <select style="max-width:200px;margin-top:10px;" class="form-control" ng-model="data.category">
             <option ng-if="data.type=='income'" value="salary">salary</option>
             <option ng-if="data.type=='income'" value="business">business</option>
+            <option ng-if="data.type=='income'" value="intrest">intrest</option>
             <option ng-if="data.type=='expenses'" value="HomeIntrest">Home Intrest</option>
             <option ng-if="data.type=='expenses'" value="shopping">shopping</option>
           </select>
@@ -58,7 +59,7 @@
         <td>
           Amount: </td>
         <td>
-          <input style="max-width:200px;" class="form-control" ng-model="data.Amount" required />
+          <input style="max-width:200px;" type="number" class="form-control" ng-model="data.Amount" required />
         </td>
       </tr>
       <tr>

@@ -1,6 +1,6 @@
-app.controller('expenseController', ['incomeFactory', '$scope', '$window', 'Notification', function(incomeFactory, $scope, $window, Notification) {
+app.controller('expenseController', ['DataFactory', '$scope', '$window', 'Notification', function(DataFactory, $scope, $window, Notification) {
 
-  $scope.expenseData = incomeFactory.getExpense();
+  $scope.expenseData = DataFactory.getExpense();
   $scope.editingData = {};
 
   for (var i = 0, length = $scope.expenseData.length; i < length; i++) {

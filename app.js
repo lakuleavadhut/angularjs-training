@@ -14,8 +14,8 @@ app.config(['$routeProvider', function($routeProvider) {
       templateUrl: '/view/income.html',
       controller: 'incomeController',
       resolve: {
-        income: function(incomeFactory) {
-          return incomeFactory.getIncomeFromHTTP();
+        income: function(DataFactory) {
+          return DataFactory.getIncomeFromHTTP();
         }
       }
     })

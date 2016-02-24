@@ -1,4 +1,4 @@
-angular.module('myApp').factory('incomeFactory', ['$http', '$q', '$window', function($http, $q, $window) {
+app.factory('DataFactory', ['$http', '$q', '$window', function($http, $q, $window) {
 
   var masterIncome = [];
   var masterExpense = [];

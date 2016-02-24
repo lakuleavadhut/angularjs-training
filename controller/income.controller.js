@@ -1,7 +1,7 @@
-app.controller('incomeController', ['$scope', 'income', 'incomeFactory', 'Notification', function($scope, income, incomeFactory, Notification) {
+app.controller('incomeController', ['$scope', 'income', 'DataFactory', 'Notification', function($scope, income, DataFactory, Notification) {
 
   var incomeFromHttp = income.data;
-  var incomeFromLocal = incomeFactory.getIncomeFromLocal();
+  var incomeFromLocal = DataFactory.getIncomeFromLocal();
   $scope.incomeData = incomeFromHttp.concat(incomeFromLocal);
   $scope.editingData = {};
 
