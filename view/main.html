@@ -1,5 +1,5 @@
 <div>
-  <form novalidate name="addForm" class="css-form">
+  <form name="addForm" class="css-form">
     <h1> Add Information</h1>
     <table class="table table-bordered">
       <tr>
@@ -7,14 +7,17 @@
           Transaction Id:
         </td>
         <td>
-          <input style="max-width:200px;" type="number" class="form-control" ng-model="data.transactionId" required />
+          {{addForm.data.transactionId.$invalid}}
+          <input style="max-width:200px;" name="tId" type="number" class="form-control" ng-model="data.transactionId" required>
+          <span ng-show="addForm.tId.$touched && addForm.tId.$invalid">The Id is required.</span> </input>
         </td>
       </tr>
       <tr>
         <td>
           Name of the payer: </td>
         <td>
-          <input style="max-width:200px;" class="form-control" ng-model="data.payer" required />
+          <input style="max-width:200px;" name="payer" class="form-control" ng-model="data.payer" required >
+          <span ng-show="addForm.payer.$touched && addForm.payer.$invalid">The payer is required.</span></input>
         </td>
       </tr>
       <tr>
@@ -22,7 +25,8 @@
           Name of the payee:
         </td>
         <td>
-          <input style="max-width:200px;" class="form-control" ng-model="data.payee" required />
+          <input style="max-width:200px;" name="payee" class="form-control" ng-model="data.payee" required >
+          <span ng-show="addForm.payee.$touched && addForm.payee.$invalid">The payee is required.</span></input>
         </td>
       </tr>
       <tr>
@@ -52,14 +56,16 @@
         <td>
           Date: </td>
         <td>
-          <input style="max-width:200px;display: inline-flex;" class="form-control" ng-model="data.date" required />
+          <input style="max-width:200px;" type="date" name="date" class="form-control" ng-model="data.date" required >
+            <span ng-show="addForm.date.$touched && addForm.date.$invalid">Date is required.</span></input>
         </td>
       </tr>
       <tr>
         <td>
           Amount: </td>
         <td>
-          <input style="max-width:200px;" type="number" class="form-control" ng-model="data.Amount" required />
+          <input style="max-width:200px;" name="amount" type="number" class="form-control" ng-model="data.Amount" required >
+            <span ng-show="addForm.amount.$touched && addForm.amount.$invalid">Amount is required.</span></input>
         </td>
       </tr>
       <tr>
